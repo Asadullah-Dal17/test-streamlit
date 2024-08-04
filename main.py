@@ -25,7 +25,7 @@ html_code = """
     <div class="container">
         <div class="profile">
             <div class="profile-image">
-                <img src="https://images.pexels.com/photos/1040879/pexels-photo-1040879.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Profile Image">
+                <img src="https://github.com/user-attachments/assets/8acee0eb-2fe1-49b8-a007-56fdebeb5a9f" alt="Profile Image">
             </div>
             <div class="profile-details">
                 <h2>Asadullah Dal</h2>
