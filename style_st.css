@@ -1,0 +1,479 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Source+Code+Pro:wght@400;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    color: #333333;
+    /* Dark gray for text */
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #f5f5f5;
+    /* Light gray background for the container */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    width: 100%;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.profile-image {
+    width: 80%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 6px solid #ffffff;
+    /* White border for profile image */
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.profile-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.profile-image:hover img {
+    transform: scale(1.1);
+}
+
+.profile-details {
+    text-align: center;
+}
+
+.profile-details h2 {
+    margin: 10px 0;
+    font-size: 24px;
+    color: #000000;
+    /* Black for headings */
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.profile-details p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #555555;
+    /* Medium gray for text */
+    font-family: 'Source Code Pro', monospace;
+}
+
+.profile-details h2:hover {
+    color: #333333;
+    /* Darker gray on hover */
+}
+
+.social-media a {
+    margin: 0 10px;
+    color: #555555;
+    /* Medium gray for social media icons */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-media a:hover {
+    color: #000000;
+    /* Black on hover */
+    transform: scale(1.2);
+}
+
+.social-media i {
+    font-size: 24px;
+}
+
+.introduction {
+    max-width: 500px;
+    text-align: left;
+    flex-grow: 1;
+}
+
+.introduction h1 {
+    margin: 0 0 10px;
+    font-size: 28px;
+    color: #000000;
+    /* Black for introduction heading */
+    font-weight: 700;
+}
+
+.introduction p {
+    margin: 0 0 20px 0;
+    font-size: 18px;
+    color: #555555;
+    /* Medium gray for introduction text */
+    font-family: 'Source Code Pro', monospace;
+}
+
+.view-more {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #ffffff;
+    /* White text */
+    background-color: #333333;
+    /* Dark gray background */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.view-more:hover {
+    background-color: #000000;
+    /* Black on hover */
+    transform: scale(1.05);
+}
+
+@media screen and (max-width: 836px) {
+    .container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .profile {
+        margin-bottom: 20px;
+        margin-right: 0;
+    }
+
+    .introduction {
+        text-align: center;
+    }
+
+    .skills {
+        padding: 20px;
+        margin: 20px 0;
+    }
+}
+
+.skills {
+    background-color: #f5f5f5;
+    /* Light gray background for skills section */
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1000px;
+}
+
+.container-skills {
+    width: 100%;
+}
+
+.skill {
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    /* White background for skill cards */
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.skill-name {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #000000;
+    /* Black for skill names */
+}
+
+.progress-bar {
+    background-color: #dcdcdc;
+    /* Light gray background for progress bars */
+    border-radius: 5px;
+    overflow: hidden;
+    height: 20px;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.progress {
+    background-color: #333333;
+    /* Dark gray for progress */
+    height: 100%;
+    line-height: 20px;
+    color: #ffffff;
+    /* White text for progress percentage */
+    text-align: center;
+    border-radius: 5px;
+    transition: width 0.3s;
+}
+
+/* Cards Section */
+.warp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.title-container {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 20px;
+    /* Add margin to create space between title and cards */
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    margin-left: 20px;
+    /* Optional: add some left margin for better alignment */
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+}
+
+.box {
+    height: 300px;
+    width: 350px;
+    background-color: #fff;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    transition: 0.5s;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.imgbox {
+    position: absolute;
+    top: 20px;
+    height: 220px;
+    width: 310px;
+    transition: 0.5s;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #333;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.imgbox img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.box:hover .imgbox {
+    transform: scale(0.7);
+    top: -100px;
+}
+
+.box:hover {
+    height: 450px;
+}
+
+.text {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.content {
+    text-align: center;
+    top: 245px;
+    position: absolute;
+    transition: 0.5s;
+    height: 50px;
+    padding: 0 20px;
+    overflow: hidden;
+}
+
+.content h2 {
+    font-size: 20px;
+    color: gray;
+    background-color: #f0f0f0;
+    border-radius: 9px;
+    margin-top: 10px;
+    padding: 2px 2px;
+    margin-bottom: 10px;
+}
+
+.content a {
+    padding: 12px 15px;
+    background-color: #333;
+    font-size: 14px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 8px;
+}
+
+.box:hover .content {
+    top: 120px;
+    height: 100%;
+}
+
+/* youtube info section*/
+
+.section {
+    /* background-color: #ffffff; */
+    background-color: #f5f5f5;
+    padding: 40px;
+    margin: 20px 0;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1000px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.section-title {
+    width: 100%;
+    text-align: center;
+    font-size: 28px;
+    color: #000000;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.stats-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px
+}
+
+.stat-item {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    margin: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.stat-icon {
+    font-size: 40px;
+    color: #333333;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.stat-item:hover .stat-icon {
+    color: #ff4500;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 16px;
+    color: #555555;
+}
+
+.video-item {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.video-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.video-embed {
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.video-embed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.video-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 5px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .section {
+        padding: 20px;
+    }
+}
