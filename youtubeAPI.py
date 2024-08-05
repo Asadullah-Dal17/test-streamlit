@@ -13,6 +13,7 @@ class YoutubeAPI:
         self.youtube = build("youtube", "v3", developerKey=self.api_key)
         self.DEFAULT_IMAGE_URL = "https://via.placeholder.com/400?text=No+Image+Found"
         self.video_ids = []
+        self.video_counts = 0
 
     def get_response_from_youtube_api(self):
         request = self.youtube.channels().list(
@@ -29,6 +30,7 @@ class YoutubeAPI:
             view_count=self.response["items"][0]["statistics"]["viewCount"],
             video_count=self.response["items"][0]["statistics"]["videoCount"],
         )
+        self.video_counts = self.response["items"][0]["statistics"]["videoCount"]
         self.playlist_id = self.response["items"][0]["contentDetails"][
             "relatedPlaylists"
         ]["uploads"]
@@ -81,6 +83,7 @@ class YoutubeAPI:
 
     def get_all_video_ids_from_playlist(self, max_results_per_request=50):
         # self.video_ids = []
+
         request = self.youtube.playlistItems().list(
             part="contentDetails, snippet",  # Only request the contentDetails part
             playlistId=self.playlist_id,
@@ -89,9 +92,14 @@ class YoutubeAPI:
 
         while request:
             response = request.execute()
-            self.video_ids.extend(
-                [item["contentDetails"]["videoId"] for item in response["items"]]
-            )
+            print(len(self.video_ids), len(self.video_ids) < int(self.video_counts))
+            if len(self.video_ids) < int(self.video_counts):
+                self.video_ids.extend(
+                    [item["contentDetails"]["videoId"] for item in response["items"]]
+                )
+            else:
+                return self.video_ids
+
             request = self.youtube.playlistItems().list_next(request, response)
             # print(response)
             time.sleep(1)  # Add a delay to avoid hitting rate limits
