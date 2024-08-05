@@ -22,7 +22,7 @@ cover/
 venv/
 ENV/
 virtualenv/
-
+.streamlit/
 # IDE/Editor specific
 .idea/
 .vscode/
