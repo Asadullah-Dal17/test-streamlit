@@ -1,6 +1,14 @@
 import streamlit as st
+import youtubeAPI
 
 st.set_page_config(layout="wide")
+
+youtube_api_key = st.secrets["YOUTUBE_API_KEY"]
+yt_api = youtubeAPI.YoutubeAPI(
+    api_key=youtube_api_key, channel_id="UCc8Lx22a5OX4XMxrCykzjbA"
+)
+
+yt_api.get_response_from_youtube_api()
 
 
 def load_css(file_path):
@@ -142,60 +150,75 @@ def cards():
     st.html(html_string)
 
 
-def youtube_data_display():
+def to_ks(num):
+    return num / 1000
 
-    html_string = """ <section class="section">
+
+def youtube_data_display():
+    total_videos, total_subscribers, total_views = (
+        yt_api.get_basic_statics()["video_count"],
+        yt_api.get_basic_statics()["subscriber_count"],
+        yt_api.get_basic_statics()["view_count"],
+    )
+
+    # total_views_k = to_ks(total_views)
+
+    yt_api.get_all_video_ids_from_playlist()
+    _, channel_stats = yt_api.get_videos_statistics()
+    total_views_k = to_ks(channel_stats["view_count"])
+    likes_k = to_ks(channel_stats["like_count"])
+    comments_k = to_ks(channel_stats["comment_count"])
+    channel_duraiton = channel_stats["channel_duration"]
+    total_videos = channel_stats["video_count"]
+
+    # total_views = yt_api.basic_information()["total_views"]
+    html_string = f""" <section class="section">
         <div class="section-title">YouTube Stats</div>
         <div class="stats-container">
             <div class="stat-item">
-                <i class="fas fa-video stat-icon"></i>
-                <div class="stat-value">120</div>
-                <div class="stat-label">Total Videos</div>
-            </div>
-            <div class="stat-item">
                 <i class="fas fa-users stat-icon"></i>
-                <div class="stat-value">5k</div>
+                <div class="stat-value">{int(total_subscribers)/1000:.3f}k</div>
                 <div class="stat-label">Total Subscribers</div>
             </div>
             <div class="stat-item">
+                <i class="fas fa-video stat-icon"></i>
+                <div class="stat-value">{total_videos}</div>
+                <div class="stat-label">Total Videos</div>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-eye stat-icon"></i>
+                <div class="stat-value">{total_views_k:.2f}K</div>
+                <div class="stat-label">Total Views</div>
+            </div>
+            <div class="stat-item">
                 <i class="fas fa-thumbs-up stat-icon"></i>
-                <div class="stat-value">50k</div>
+                <div class="stat-value">{likes_k}k</div>
                 <div class="stat-label">Total Likes</div>
             </div>
             <div class="stat-item">
                 <i class="fas fa-comments stat-icon"></i>
-                <div class="stat-value">10k</div>
+                <div class="stat-value">{comments_k}k</div>
                 <div class="stat-label">Total Comments</div>
             </div>
             <div class="stat-item">
                 <i class="fas fa-clock stat-icon"></i>
-                <div class="stat-value">50h</div>
+                <div class="stat-value">{channel_duraiton}</div>
                 <div class="stat-label">Total Content Duration</div>
             </div>
             <div class="stat-item">
                 <i class="fas fa-calendar-alt stat-icon"></i>
-                <div class="stat-value">5d</div>
+                <div class="stat-value"> </div>
                 <div class="stat-label">Content Gap</div>
             </div>
             <div class="stat-item">
                 <i class="fas fa-thumbs-up stat-icon"></i>
-                <div class="stat-value">500</div>
+                <div class="stat-value">{int(channel_stats['like_count'])/total_videos:.2f}</div>
                 <div class="stat-label">Average Likes</div>
             </div>
             <div class="stat-item">
                 <i class="fas fa-comments stat-icon"></i>
-                <div class="stat-value">20</div>
+                <div class="stat-value">{int(channel_stats['comment_count'])/total_videos:.2f}</div>
                 <div class="stat-label">Average Comments</div>
-            </div>
-            <div class="stat-item">
-                <i class="fas fa-eye stat-icon"></i>
-                <div class="stat-value">1M</div>
-                <div class="stat-label">Total Views</div>
-            </div>
-            <div class="stat-item">
-                <i class="fas fa-chart-line stat-icon"></i>
-                <div class="stat-value">10%</div>
-                <div class="stat-label">Engagement Rate</div>
             </div>
         </div>
     </section>
