@@ -171,6 +171,10 @@ def youtube_data_display():
     channel_duraiton = channel_stats["channel_duration"]
     total_videos = channel_stats["video_count"]
 
+    # Get recents videos
+    recent_videos = yt_api.recent_videos_links()
+    # recent_videos[0]['url']
+
     # total_views = yt_api.basic_information()["total_views"]
     html_string = f""" <section class="section">
         <div class="section-title">YouTube Stats</div>
@@ -228,7 +232,7 @@ def youtube_data_display():
         <div class="stats-container">
             <div class="video-item">
                 <div class="video-embed">
-                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/" allowfullscreen></iframe>
                 </div>
                 <div class="video-title">Recent Video 1</div>
                 <div class="video-stats">
@@ -248,19 +252,19 @@ def youtube_data_display():
             </div>
             <div class="video-item">
                 <div class="video-embed">
-                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" allowfullscreen></iframe>
+                    <iframe src={recent_videos[0]['url']} allowfullscreen></iframe>
                 </div>
                 <div class="video-title">Recent Video 1</div>
             </div>
             <div class="video-item">
                 <div class="video-embed">
-                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" allowfullscreen></iframe>
+                    <iframe src={recent_videos[1]['url']} allowfullscreen></iframe>
                 </div>
                 <div class="video-title">Recent Video 2</div>
             </div>
             <div class="video-item">
                 <div class="video-embed">
-                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" allowfullscreen></iframe>
+                    <iframe src={recent_videos[2]['url']} allowfullscreen></iframe>
                 </div>
                 <div class="video-title">Recent Video 3</div>
             </div>

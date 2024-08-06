@@ -283,14 +283,14 @@ class YoutubeAPI:
         }
         return self.video_details, channel_statistics
 
-    def get_most_popular_videos(self, number_of_videos=6):
+    def get_most_popular_videos(self, number_of_videos=4):
         self.popular_videos_urls = []
         self.popular_videos = sorted(
             self.video_details, key=lambda x: x["viewCount"], reverse=True
         )
         for video in self.popular_videos[0:number_of_videos]:
             # print(video)
-            video_link = f"https://www.youtube.com/watch?v={video['videoId']}"
+            video_link = f"https://www.youtube.com/embed/{video['videoId']}"
             video_duration_formated, video_duration_seconds = (
                 self.parse_youtube_video_duration(video["duration"])
             )
@@ -311,10 +311,10 @@ class YoutubeAPI:
             self.popular_videos_urls.append(video_inf)
         return self.popular_videos_urls
 
-    def recent_videos_links(self):
+    def recent_videos_links(self, number_of_videos=4):
         recent_videos = []
-        for video in self.video_details[0:6]:
-            video_link = f"https://www.youtube.com/watch?v={video['videoId']}"
+        for video in self.video_details[0:number_of_videos]:
+            video_link = f"https://www.youtube.com/embed/{video['videoId']}"
             video_duration_formated, video_duration_seconds = (
                 self.parse_youtube_video_duration(video["duration"])
             )
