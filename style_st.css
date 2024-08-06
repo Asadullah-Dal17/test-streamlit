@@ -460,6 +460,33 @@ body {
     margin-bottom: 5px;
 }
 
+.video-title {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+.video-stats {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.video-stats .stat {
+    display: flex;
+    align-items: center;
+}
+
+.video-stats .stat-icon {
+    font-size: 1rem;
+    /* Adjust the icon size here */
+    margin-right: 0.3rem;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;

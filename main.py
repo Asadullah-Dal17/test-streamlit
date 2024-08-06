@@ -231,6 +231,20 @@ def youtube_data_display():
                     <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" allowfullscreen></iframe>
                 </div>
                 <div class="video-title">Recent Video 1</div>
+                <div class="video-stats">
+    <div class="stat">
+        <i class="fas fa-eye stat-icon"></i>
+            <span>{total_views_k}K</span>
+        </div>
+        <div class="stat">
+            <i class="fas fa-thumbs-up stat-icon"></i>
+            <span>{likes_k}K</span>
+        </div>
+        <div class="stat">
+            <i class="fas fa-comments stat-icon"></i>
+            <span>{comments_k}K</span>
+        </div>
+    </div>
             </div>
             <div class="video-item">
                 <div class="video-embed">
@@ -261,6 +275,7 @@ def youtube_data_display():
                     <iframe src="https://www.youtube.com/embed/VIDEO_ID_4" allowfullscreen></iframe>
                 </div>
                 <div class="video-title">Popular Video 1</div>
+                <div class="video-stats">Likes: 12 | Comments: 12</div>
             </div>
             <div class="video-item">
                 <div class="video-embed">
