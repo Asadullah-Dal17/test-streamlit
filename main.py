@@ -1,5 +1,6 @@
 import streamlit as st
 import youtubeAPI
+import streamlit.components.v1 as components
 
 st.set_page_config(layout="wide")
 
@@ -232,7 +233,7 @@ def youtube_data_display():
         <div class="stats-container">
             <div class="video-item">
                 <div class="video-embed">
-                    <iframe src="https://www.youtube.com/embed/" allowfullscreen></iframe>
+                    <iframe src="{recent_videos[0]['url']}" allowfullscreen></iframe>
                 </div>
                 <div class="video-title">Recent Video 1</div>
                 <div class="video-stats">
@@ -252,7 +253,7 @@ def youtube_data_display():
             </div>
             <div class="video-item">
                 <div class="video-embed">
-                    <iframe src={recent_videos[0]['url']} allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/DNKAvDeqH_Y" allowfullscreen></iframe>
                 </div>
                 <div class="video-title">Recent Video 1</div>
             </div>
@@ -302,7 +303,7 @@ def youtube_data_display():
         </div>
     </section> 
     """
-    st.html(html_string)
+    st.markdown(html_string, unsafe_allow_html=True)
 
 
 def main():
