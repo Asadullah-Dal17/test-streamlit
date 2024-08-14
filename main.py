@@ -228,49 +228,50 @@ def youtube_data_display():
         </div>
     </section>
 
-    <section class="section">
-        <div class="section-title">Recent Videos</div>
-        <div class="stats-container">
-            <div class="video-item">
-                <div class="video-embed">
-                    <iframe src="{recent_videos[0]['url']}" allowfullscreen></iframe>
+<section class="section">
+    <div class="section-title">Recent Videos</div>
+    <div class="stats-container">
+        <div class="video-item">
+            <div class="video-embed">
+                <iframe src="{recent_videos[0]['url']}" allowfullscreen></iframe>
+            </div>
+            <div class="video-title">Recent Video 1</div>
+            <div class="video-stats">
+                <div class="stat">
+                    <i class="fas fa-eye stat-icon"></i>
+                    <span>{total_views_k}K</span>
                 </div>
-                <div class="video-title">Recent Video 1</div>
-                <div class="video-stats">
-    <div class="stat">
-        <i class="fas fa-eye stat-icon"></i>
-            <span>{total_views_k}K</span>
+                <div class="stat">
+                    <i class="fas fa-thumbs-up stat-icon"></i>
+                    <span>{likes_k}K</span>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-comments stat-icon"></i>
+                    <span>{comments_k}K</span>
+                </div>
+            </div>
         </div>
-        <div class="stat">
-            <i class="fas fa-thumbs-up stat-icon"></i>
-            <span>{likes_k}K</span>
-        </div>
-        <div class="stat">
-            <i class="fas fa-comments stat-icon"></i>
-            <span>{comments_k}K</span>
+        <div class="video-item">
+            <div class="video-embed">
+                <iframe src={recent_videos[1]['url']} allowfullscreen></iframe>
+            </div>
+            <div class="video-title">Recent Video 2</div>
         </div>
     </div>
-            </div>
-            <div class="video-item">
-                <div class="video-embed">
-                    <iframe src="https://www.youtube.com/embed/DNKAvDeqH_Y" allowfullscreen></iframe>
-                </div>
-                <div class="video-title">Recent Video 1</div>
-            </div>
-            <div class="video-item">
-                <div class="video-embed">
-                    <iframe src={recent_videos[1]['url']} allowfullscreen></iframe>
-                </div>
-                <div class="video-title">Recent Video 2</div>
-            </div>
-            <div class="video-item">
-                <div class="video-embed">
-                    <iframe src={recent_videos[2]['url']} allowfullscreen></iframe>
-                </div>
-                <div class="video-title">Recent Video 3</div>
-            </div>
+    <div class="video-item">
+        <div class="video-embed">
+            <iframe src={recent_videos[2]['url']} allowfullscreen></iframe>
         </div>
-    </section>
+        <div class="video-title">Recent Video 3</div>
+    </div>
+    <div class="video-item">
+        <div class="video-embed">
+            <iframe src={recent_videos[3]['url']} allowfullscreen></iframe>
+        </div>
+        <div class="video-title">Recent Video 4</div>
+    </div>
+    </div>
+</section>
 
     <section class="section">
         <div class="section-title">Most Popular Videos</div>
