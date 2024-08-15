@@ -1,6 +1,5 @@
 import streamlit as st
 import youtubeAPI
-import streamlit.components.v1 as components
 
 st.set_page_config(layout="wide")
 
@@ -155,6 +154,43 @@ def to_ks(num):
     return num / 1000
 
 
+def most_popular_videos():
+    most_popular_videos_list = yt_api.get_most_popular_videos()
+    html_most_popular = f"""
+    <!--  ++ Most Popular Videos Section +++ -->
+    <section class="section">
+        <div class="section-title">Most Popular Videos</div>
+        <div class="stats-container">
+            <div class="video-item">
+                <div class="video-embed">
+                    <iframe src={most_popular_videos_list[0]['url']} allowfullscreen></iframe>
+                </div>
+                <div class="video-title">Popular Video 1</div>
+                <div class="video-stats">Likes: 12 | Comments: 12</div>
+            </div>
+            <div class="video-item">
+                <div class="video-embed">
+                    <iframe src={most_popular_videos_list[1]['url']} allowfullscreen></iframe>
+                </div>
+                <div class="video-title">Popular Video 1</div>
+            </div>
+            <div class="video-item">
+                <div class="video-embed">
+                    <iframe src={most_popular_videos_list[2]['url']} allowfullscreen></iframe>
+                </div>
+                <div class="video-title">Popular Video 2</div>
+            </div>
+            <div class="video-item">
+                <div class="video-embed">
+                    <iframe src={most_popular_videos_list[3]['url']} allowfullscreen></iframe>
+                </div>
+                <div class="video-title">Popular Video 3</div>
+            </div>
+        </div>
+    </section>"""
+    st.markdown(html_most_popular, unsafe_allow_html=True)
+
+
 def youtube_data_display():
     total_videos, total_subscribers, total_views = (
         yt_api.get_basic_statics()["video_count"],
@@ -175,140 +211,10 @@ def youtube_data_display():
     # Get recents videos
     recent_videos = yt_api.recent_videos_links()
     # recent_videos[0]['url']
-
-    # total_views = yt_api.basic_information()["total_views"]
-    html_string = f""" <section class="section">
-        <div class="section-title">YouTube Stats</div>
-        <div class="stats-container">
-            <div class="stat-item">
-                <i class="fas fa-users stat-icon"></i>
-                <div class="stat-value">{int(total_subscribers)/1000:.3f}k</div>
-                <div class="stat-label">Total Subscribers</div>
-            </div>
-            <div class="stat-item">
-                <i class="fas fa-video stat-icon"></i>
-                <div class="stat-value">{total_videos}</div>
-                <div class="stat-label">Total Videos</div>
-            </div>
-            <div class="stat-item">
-                <i class="fas fa-eye stat-icon"></i>
-                <div class="stat-value">{total_views_k:.2f}K</div>
-                <div class="stat-label">Total Views</div>
-            </div>
-            <div class="stat-item">
-                <i class="fas fa-thumbs-up stat-icon"></i>
-                <div class="stat-value">{likes_k}k</div>
-                <div class="stat-label">Total Likes</div>
-            </div>
-            <div class="stat-item">
-                <i class="fas fa-comments stat-icon"></i>
-                <div class="stat-value">{comments_k}k</div>
-                <div class="stat-label">Total Comments</div>
-            </div>
-            <div class="stat-item">
-                <i class="fas fa-clock stat-icon"></i>
-                <div class="stat-value">{channel_duraiton}</div>
-                <div class="stat-label">Total Content Duration</div>
-            </div>
-            <div class="stat-item">
-                <i class="fas fa-calendar-alt stat-icon"></i>
-                <div class="stat-value"> </div>
-                <div class="stat-label">Content Gap</div>
-            </div>
-            <div class="stat-item">
-                <i class="fas fa-thumbs-up stat-icon"></i>
-                <div class="stat-value">{int(channel_stats['like_count'])/total_videos:.2f}</div>
-                <div class="stat-label">Average Likes</div>
-            </div>
-            <div class="stat-item">
-                <i class="fas fa-comments stat-icon"></i>
-                <div class="stat-value">{int(channel_stats['comment_count'])/total_videos:.2f}</div>
-                <div class="stat-label">Average Comments</div>
-            </div>
-        </div>
-    </section>
-
-<section class="section">
-    <div class="section-title">Recent Videos</div>
-    <div class="stats-container">
-        <div class="video-item">
-            <div class="video-embed">
-                <iframe src="{recent_videos[0]['url']}" allowfullscreen></iframe>
-            </div>
-            <div class="video-title">Recent Video 1</div>
-            <div class="video-stats">
-                <div class="stat">
-                    <i class="fas fa-eye stat-icon"></i>
-                    <span>{total_views_k}K</span>
-                </div>
-                <div class="stat">
-                    <i class="fas fa-thumbs-up stat-icon"></i>
-                    <span>{likes_k}K</span>
-                </div>
-                <div class="stat">
-                    <i class="fas fa-comments stat-icon"></i>
-                    <span>{comments_k}K</span>
-                </div>
-            </div>
-        </div>
-        <div class="video-item">
-            <div class="video-embed">
-                <iframe src={recent_videos[1]['url']} allowfullscreen></iframe>
-            </div>
-            <div class="video-title">Recent Video 2</div>
-        </div>
-    </div>
-    <div class="video-item">
-        <div class="video-embed">
-            <iframe src={recent_videos[2]['url']} allowfullscreen></iframe>
-        </div>
-        <div class="video-title">Recent Video 3</div>
-    </div>
-    <div class="video-item">
-        <div class="video-embed">
-            <iframe src={recent_videos[3]['url']} allowfullscreen></iframe>
-        </div>
-        <div class="video-title">Recent Video 4</div>
-    </div>
-    </div>
-</section>
-
-    <section class="section">
-        <div class="section-title">Most Popular Videos</div>
-        <div class="stats-container">
-            <div class="video-item">
-                <div class="video-embed">
-                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_4" allowfullscreen></iframe>
-                </div>
-                <div class="video-title">Popular Video 1</div>
-                <div class="video-stats">Likes: 12 | Comments: 12</div>
-            </div>
-            <div class="video-item">
-                <div class="video-embed">
-                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_4" allowfullscreen></iframe>
-                </div>
-                <div class="video-title">Popular Video 1</div>
-            </div>
-            <div class="video-item">
-                <div class="video-embed">
-                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_5" allowfullscreen></iframe>
-                </div>
-                <div class="video-title">Popular Video 2</div>
-            </div>
-            <div class="video-item">
-                <div class="video-embed">
-                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_6" allowfullscreen></iframe>
-                </div>
-                <div class="video-title">Popular Video 3</div>
-            </div>
-        </div>
-    </section> 
-    """
-    st.markdown(html_string, unsafe_allow_html=True)
+    most_popular_videos()
 
 
 def main():
-    # st.set_page_config(layout="wide")
     load_css("style_st.css")
     cards()
     youtube_data_display()
