@@ -306,8 +306,6 @@ def main():
     load_css("style_st.css")
     cards()
     youtube_data_display()
-    published_at = yt_api.calculate_content_gap()
-    st.write("Content Gap: ", published_at)
 
 
 if __name__ == "__main__":

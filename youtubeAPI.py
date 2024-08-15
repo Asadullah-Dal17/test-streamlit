@@ -355,7 +355,9 @@ class YoutubeAPI:
         total_seconds = time_difference.total_seconds()
 
         # Calculate gap in seconds per video (if needed)
-        gap_in_seconds = total_seconds / self.video_count if self.video_count > 0 else 0
+        gap_in_seconds = (
+            total_seconds / int(self.video_counts) if int(self.video_counts) > 0 else 0
+        )
 
         # Convert total_seconds back to days, hours, minutes, and seconds
         days = int(gap_in_seconds // 86400)  # 86400 seconds in a day
