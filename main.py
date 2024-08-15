@@ -156,6 +156,7 @@ def to_ks(num):
 
 def most_popular_videos():
     most_popular_videos_list = yt_api.get_most_popular_videos()
+
     html_most_popular = f"""
     <!--  ++ Most Popular Videos Section +++ -->
     <section class="section">
@@ -191,6 +192,82 @@ def most_popular_videos():
     st.markdown(html_most_popular, unsafe_allow_html=True)
 
 
+def display_youtube_channel_stats(
+    subscriber,
+    videos,
+    views,
+    likes,
+    comments,
+    channel_duration,
+):
+    # Ensure numeric values are correctly typed
+    subscriber = int(subscriber)
+    videos = int(videos)
+    views = float(views)
+    likes = int(likes)
+    comments = int(comments)
+    # channel_duration = str(channel_duration)  # Assuming channel_duration is already a string
+
+    # Guard against zero division for averages
+    average_likes = f"{(likes / videos):.2f}" if videos > 0 else "N/A"
+    average_comments = f"{(comments / videos):.2f}" if videos > 0 else "N/A"
+
+    html_channel_stats = f"""
+        <!-- Youtube Stats Section -->
+        <section class="section">
+            <div class="section-title">YouTube Stats</div>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <i class="fas fa-users stat-icon"></i>
+                    <div class="stat-value">{subscriber}</div>
+                    <div class="stat-label">Total Subscribers</div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-video stat-icon"></i>
+                    <div class="stat-value">{videos}</div>
+                    <div class="stat-label">Total Videos</div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-eye stat-icon"></i>
+                    <div class="stat-value">{to_ks(views):.2f}K</div>
+                    <div class="stat-label">Total Views</div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-thumbs-up stat-icon"></i>
+                    <div class="stat-value">{to_ks(likes)}K</div>
+                    <div class="stat-label">Total Likes</div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-comments stat-icon"></i>
+                    <div class="stat-value">{comments}</div>
+                    <div class="stat-label">Total Comments</div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-clock stat-icon"></i>
+                    <div class="stat-value">{channel_duration}</div>
+                    <div class="stat-label">Total Content Duration</div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-calendar-alt stat-icon"></i>
+                    <div class="stat-value"></div>
+                    <div class="stat-label">Content Gap</div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-thumbs-up stat-icon"></i>
+                    <div class="stat-value">{average_likes}</div>
+                    <div class="stat-label">Average Likes</div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-comments stat-icon"></i>
+                    <div class="stat-value">{average_comments}</div>
+                    <div class="stat-label">Average Comments</div>
+                </div>
+            </div>
+        </section> """
+
+    st.markdown(html_channel_stats, unsafe_allow_html=True)
+
+
 def youtube_data_display():
     total_videos, total_subscribers, total_views = (
         yt_api.get_basic_statics()["video_count"],
@@ -202,15 +279,23 @@ def youtube_data_display():
 
     yt_api.get_all_video_ids_from_playlist()
     _, channel_stats = yt_api.get_videos_statistics()
-    total_views_k = to_ks(channel_stats["view_count"])
-    likes_k = to_ks(channel_stats["like_count"])
-    comments_k = to_ks(channel_stats["comment_count"])
-    channel_duraiton = channel_stats["channel_duration"]
+    total_views = channel_stats["view_count"]
+    likes = channel_stats["like_count"]
+    comments = channel_stats["comment_count"]
+    channel_duration = channel_stats["channel_duration"]
     total_videos = channel_stats["video_count"]
 
     # Get recents videos
     recent_videos = yt_api.recent_videos_links()
     # recent_videos[0]['url']
+    display_youtube_channel_stats(
+        subscriber=total_subscribers,
+        views=total_views,
+        videos=total_videos,
+        likes=likes,
+        comments=comments,
+        channel_duration=channel_duration,
+    )
     most_popular_videos()
 
 
