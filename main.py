@@ -7,7 +7,6 @@ youtube_api_key = st.secrets["YOUTUBE_API_KEY"]
 yt_api = youtubeAPI.YoutubeAPI(
     api_key=youtube_api_key, channel_id="UCc8Lx22a5OX4XMxrCykzjbA"
 )
-
 yt_api.get_response_from_youtube_api()
 
 
@@ -211,6 +210,8 @@ def display_youtube_channel_stats(
     # Guard against zero division for averages
     average_likes = f"{(likes / videos):.2f}" if videos > 0 else "N/A"
     average_comments = f"{(comments / videos):.2f}" if videos > 0 else "N/A"
+    channel_basic_info = yt_api.basic_information()
+    content_gap = yt_api.calculate_content_gap()
 
     html_channel_stats = f"""
         <!-- Youtube Stats Section -->
@@ -249,7 +250,7 @@ def display_youtube_channel_stats(
                 </div>
                 <div class="stat-item">
                     <i class="fas fa-calendar-alt stat-icon"></i>
-                    <div class="stat-value"></div>
+                    <div class="stat-value">{content_gap}</div>
                     <div class="stat-label">Content Gap</div>
                 </div>
                 <div class="stat-item">
@@ -284,6 +285,7 @@ def youtube_data_display():
     comments = channel_stats["comment_count"]
     channel_duration = channel_stats["channel_duration"]
     total_videos = channel_stats["video_count"]
+    content_duration_seconds = channel_stats["total_seconds"]
 
     # Get recents videos
     recent_videos = yt_api.recent_videos_links()
@@ -300,9 +302,12 @@ def youtube_data_display():
 
 
 def main():
+
     load_css("style_st.css")
     cards()
     youtube_data_display()
+    published_at = yt_api.calculate_content_gap()
+    st.write("Content Gap: ", published_at)
 
 
 if __name__ == "__main__":

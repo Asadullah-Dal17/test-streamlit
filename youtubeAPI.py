@@ -22,6 +22,7 @@ class YoutubeAPI:
         self.DEFAULT_IMAGE_URL = "https://via.placeholder.com/400?text=No+Image+Found"
         self.video_ids: List[str] = []
         self.video_counts: int = 0
+        self.published_at = None
 
     def channel_life_spans(self, timestamp: str) -> str:
         """
@@ -193,7 +194,7 @@ class YoutubeAPI:
 
     def basic_information(self):
         channel_details = {
-            "channel_name": self.response["items"][0]["snippet"]["title"],
+            # "channel_name": self.response["items"][0]["snippet"]["title"],
             "description": self.response["items"][0]["snippet"]["description"],
             "youtube_handel": self.response["items"][0]["snippet"].get(
                 "customUrl"
@@ -206,6 +207,7 @@ class YoutubeAPI:
             ),
             "published_at": self.response["items"][0]["snippet"]["publishedAt"],
         }
+        self.published_at = self.response["items"][0]["snippet"]["publishedAt"]
         return channel_details
 
     def get_all_video_ids_from_playlist(self, max_results_per_request=50):
@@ -291,13 +293,13 @@ class YoutubeAPI:
         for video in self.popular_videos[0:number_of_videos]:
             # print(video)
             video_link = f"https://www.youtube.com/embed/{video['videoId']}"
-            video_duration_formated, video_duration_seconds = (
+            video_duration_formatted, video_duration_seconds = (
                 self.parse_youtube_video_duration(video["duration"])
             )
             hours, minutes, seconds = (
-                video_duration_formated["hours"],
-                video_duration_formated["minutes"],
-                video_duration_formated["seconds"],
+                video_duration_formatted["hours"],
+                video_duration_formatted["minutes"],
+                video_duration_formatted["seconds"],
             )
             video_inf = {
                 "url": video_link,
@@ -335,3 +337,33 @@ class YoutubeAPI:
             recent_videos.append(video_inf)
 
         return recent_videos
+
+    def calculate_content_gap(self):
+        # Convert published_at to datetime if it is not already
+        if isinstance(self.published_at, str):
+            timestamp = datetime.strptime(self.published_at, "%Y-%m-%dT%H:%M:%S.%fZ")
+        else:
+            timestamp = self.published_at
+        print(self.published_at)
+        # Get the current time (in UTC)
+        now = datetime.utcnow()
+
+        # Calculate the time difference
+        time_difference = now - timestamp
+
+        # Calculate the total time difference in seconds
+        total_seconds = time_difference.total_seconds()
+
+        # Calculate gap in seconds per video (if needed)
+        gap_in_seconds = total_seconds / self.video_count if self.video_count > 0 else 0
+
+        # Convert total_seconds back to days, hours, minutes, and seconds
+        days = int(gap_in_seconds // 86400)  # 86400 seconds in a day
+        hours = int((gap_in_seconds % 86400) // 3600)  # 3600 seconds in an hour
+        minutes = int((gap_in_seconds % 3600) // 60)  # 60 seconds in a minute
+        seconds = int(gap_in_seconds % 60)  # remaining seconds
+
+        # Format the result as a string
+        formatted_gap = f"{days} days {hours} : {minutes} : {seconds}"
+
+        return formatted_gap
