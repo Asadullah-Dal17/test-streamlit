@@ -193,15 +193,29 @@ def most_popular_videos():
 
 def recently_uploaded_videos(recent_uploads_list):
     html_recent_upload_videos = f"""
-
+    <!-- Recent Videos Section -->
     <section class="section">
-        <div class="section-title">Recently Uploaded Videos</div>
+        <div class="section-title">Recent Videos</div>
         <div class="stats-container">
             <div class="video-item">
                 <div class="video-embed">
-                    <iframe src={recent_uploads_list[0]['url']} allowfullscreen></iframe>
+                    <iframe src={recent_uploads_list[0]["url"]} allowfullscreen></iframe>
                 </div>
                 <div class="video-title">Recent Video 1</div>
+                <div class="video-stats">
+                    <div class="stat">
+                        <i class="fas fa-eye stat-icon"></i>
+                        <span>3K</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-thumbs-up stat-icon"></i>
+                        <span>3K</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-comments stat-icon"></i>
+                        <span>3K</span>
+                    </div>
+                </div>
             </div>
             <div class="video-item">
                 <div class="video-embed">
@@ -223,8 +237,9 @@ def recently_uploaded_videos(recent_uploads_list):
             </div>
         </div>
     </section>
-
     """
+
+    st.markdown(html_recent_upload_videos, unsafe_allow_html=True)
 
 
 def display_youtube_channel_stats(
@@ -334,6 +349,7 @@ def youtube_data_display():
         comments=comments,
         channel_duration=channel_duration,
     )
+    recently_uploaded_videos(recent_videos)
     most_popular_videos()
 
 
