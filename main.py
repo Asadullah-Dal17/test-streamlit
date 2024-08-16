@@ -191,6 +191,42 @@ def most_popular_videos():
     st.markdown(html_most_popular, unsafe_allow_html=True)
 
 
+def recently_uploaded_videos(recent_uploads_list):
+    html_recent_upload_videos = f"""
+
+    <section class="section">
+        <div class="section-title">Recently Uploaded Videos</div>
+        <div class="stats-container">
+            <div class="video-item">
+                <div class="video-embed">
+                    <iframe src={recent_uploads_list[0]['url']} allowfullscreen></iframe>
+                </div>
+                <div class="video-title">Recent Video 1</div>
+            </div>
+            <div class="video-item">
+                <div class="video-embed">
+                    <iframe src={recent_uploads_list[1]['url']} allowfullscreen></iframe>
+                </div>
+                <div class="video-title">Recent Video 1</div>
+            </div>
+            <div class="video-item">
+                <div class="video-embed">
+                    <iframe src={recent_uploads_list[2]['url']} allowfullscreen></iframe>
+                </div>
+                <div class="video-title">Recent Video 2</div>
+            </div>
+            <div class="video-item">
+                <div class="video-embed">
+                    <iframe src={recent_uploads_list[3]['url']} allowfullscreen></iframe>
+                </div>
+                <div class="video-title">Recent Video 3</div>
+            </div>
+        </div>
+    </section>
+
+    """
+
+
 def display_youtube_channel_stats(
     subscriber,
     videos,
