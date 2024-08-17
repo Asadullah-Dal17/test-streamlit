@@ -201,19 +201,19 @@ def recently_uploaded_videos(recent_uploads_list):
                 <div class="video-embed">
                     <iframe src={recent_uploads_list[0]["url"]} allowfullscreen></iframe>
                 </div>
-                <div class="video-title">Recent Video 1</div>
+                <div class="video-title">{recent_uploads_list[0]["title"]}</div>
                 <div class="video-stats">
                     <div class="stat">
                         <i class="fas fa-eye stat-icon"></i>
-                        <span>3K</span>
+                        <span>{recent_uploads_list[0]["viewCount"]}</span>
                     </div>
                     <div class="stat">
                         <i class="fas fa-thumbs-up stat-icon"></i>
-                        <span>3K</span>
+                        <span>{recent_uploads_list[0]["likeCount"]}</span>
                     </div>
                     <div class="stat">
                         <i class="fas fa-comments stat-icon"></i>
-                        <span>3K</span>
+                        <span>{recent_uploads_list[0]["commentCount"]}</span>
                     </div>
                 </div>
             </div>
@@ -221,19 +221,61 @@ def recently_uploaded_videos(recent_uploads_list):
                 <div class="video-embed">
                     <iframe src={recent_uploads_list[1]['url']} allowfullscreen></iframe>
                 </div>
-                <div class="video-title">Recent Video 1</div>
+                <div class="video-title">{recent_uploads_list[1]['title']}</div>
+                <div class="video-stats">
+                    <div class="stat">
+                        <i class="fas fa-eye stat-icon"></i>
+                        <span>{recent_uploads_list[1]['viewCount']}</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-thumbs-up stat-icon"></i>
+                        <span>{recent_uploads_list[1]['likeCount']}</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-comments stat-icon"></i>
+                        <span>{recent_uploads_list[1]['commentCount']}</span>
+                    </div>
+                </div>
             </div>
             <div class="video-item">
                 <div class="video-embed">
                     <iframe src={recent_uploads_list[2]['url']} allowfullscreen></iframe>
                 </div>
-                <div class="video-title">Recent Video 2</div>
+                <div class="video-title">{recent_uploads_list[2]['title']}</div>
+                    <div class="video-stats">
+                    <div class="stat">
+                        <i class="fas fa-eye stat-icon"></i>
+                        <span>{recent_uploads_list[2]['viewCount']}</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-thumbs-up stat-icon"></i>
+                        <span>{recent_uploads_list[2]['likeCount']}</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-comments stat-icon"></i>
+                        <span>{recent_uploads_list[2]['commentCount']}</span>
+                    </div>
+                </div>
             </div>
             <div class="video-item">
                 <div class="video-embed">
                     <iframe src={recent_uploads_list[3]['url']} allowfullscreen></iframe>
                 </div>
-                <div class="video-title">Recent Video 3</div>
+                <div class="video-title">{recent_uploads_list[3]['title']}</div>
+                    <div class="video-stats">
+                    <div class="stat">
+                        <i class="fas fa-eye stat-icon"></i>
+                        <span>{recent_uploads_list[3]['viewCount']}</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-thumbs-up stat-icon"></i>
+                        <span>{recent_uploads_list[3]['likeCount']}</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-comments stat-icon"></i>
+                        <span>{recent_uploads_list[3]['commentCount']}</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
