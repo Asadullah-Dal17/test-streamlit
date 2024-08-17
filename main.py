@@ -41,8 +41,8 @@ html_code = """
             </div>
             <div class="profile-details">
                 <h2>Asadullah Dal</h2>
-                <p>Educator, YouTuber, Freelancer</p>
-                <p>Computer Vision & Robotics Specialist</p>
+                <p> Computer Vision Developer</p>
+                <p>Educator, YouTuber & Freelancer</p>
             <div class="social-media">
             <a href="https://www.youtube.com/c/aiphile" target="_blank" title="YouTube">
                 <i class="fab fa-youtube"></i>
