@@ -88,23 +88,54 @@ body {
     /* Darker gray on hover */
 }
 
-.social-media a {
+
+.social-media {
+    display: inline-flex; /* Display icons horizontally */
+    list-style: none; /* Remove default list style if needed */
+    padding: 0;
+    margin: 0;
     margin: 0 10px;
     color: #555555;
     /* Medium gray for social media icons */
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.social-media a:hover {
-    color: #000000;
-    /* Black on hover */
-    transform: scale(1.2);
-}
-
-.social-media i {
     font-size: 24px;
+    transition: color 1s ease;
+    transform: scale 0.5 ease;
+  }
+  
+  .social-media a {
+    color: inherit; /* Inherit text color from container */
+    text-decoration: none; /* Remove underline */
+    margin: 0 15px; /* Add spacing between icons */
+  }
+  
+/* Individual brand colors on hover */
+.social-media a[title="Facebook"]:hover {
+    color: #3b5998; /* Facebook blue */
+    transform: scale(1.3);
+
 }
 
+.social-media a[title="YouTube"]:hover {
+    
+    color: #FF0000; /* YouTube red */
+    transform: scale(1.3);
+    /* background-color: white; */
+}
+
+.social-media a[title="Instagram"]:hover {
+    color: #E1306C; /* Instagram pink */
+    transform: scale(1.3);
+}
+
+.social-media a[title="GitHub"]:hover {
+    color: #333; /* GitHub dark gray */
+    transform: scale(1.3);
+}
+
+.social-media a[title="LinkedIn"]:hover {
+    color: #0077b5; /* LinkedIn blue */
+    transform: scale(1.3);
+}
 .introduction {
     max-width: 500px;
     text-align: left;
