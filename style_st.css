@@ -82,12 +82,19 @@ body {
     /* Medium gray for text */
     font-family: 'Source Code Pro', monospace;
 }
-
 .profile-details h2:hover {
     color: #333333;
     /* Darker gray on hover */
 }
 
+.profile-image img {
+    filter: grayscale(100%); /* Grayscale by default */
+    transition: filter 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Smooth and easy transition */
+}
+
+.profile-image img:hover {
+    filter: grayscale(0%); /* Full color on hover */
+}
 
 .social-media {
     display: inline-flex; /* Display icons horizontally */
