@@ -366,6 +366,6 @@ class YoutubeAPI:
         seconds = int(gap_in_seconds % 60)  # remaining seconds
 
         # Format the result as a string
-        formatted_gap = f"{days} days {hours} : {minutes} : {seconds}"
+        formatted_gap = f"{days} days {hours}:{minutes}:{seconds}"
 
         return formatted_gap

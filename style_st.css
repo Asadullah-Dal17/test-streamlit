@@ -2,7 +2,7 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
 
 body {
-    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Roboto', sans-serif; */
     margin: 0;
     padding: 0;
     display: flex;
@@ -11,6 +11,15 @@ body {
     background-color: #ffffff;
     color: #333333;
     /* Dark gray for text */
+    font-family: "JetBrains Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: normal; /* Adjust the weight as needed */
+    /* font-style: ; */
+    
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'JetBrains Mono', monospace;
 }
 
 .container {
@@ -71,7 +80,7 @@ body {
     font-size: 24px;
     color: #000000;
     /* Black for headings */
-    font-weight: 700;
+    /* font-weight: 700; */
     transition: color 0.3s ease;
 }
 
@@ -80,7 +89,7 @@ body {
     font-size: 16px;
     color: #555555;
     /* Medium gray for text */
-    font-family: 'Source Code Pro', monospace;
+    /* font-family: 'Source Code Pro', monospace;    */
 }
 .profile-details h2:hover {
     color: #333333;
@@ -162,7 +171,7 @@ body {
     font-size: 18px;
     color: #555555;
     /* Medium gray for introduction text */
-    font-family: 'Source Code Pro', monospace;
+    /* font-family: 'Source Code Pro', monospace; */
 }
 
 .view-more {
@@ -406,13 +415,16 @@ body {
     color: #000000;
     font-weight: 700;
     margin-bottom: 20px;
+    font-family: "JetBrains Mono", monospace;
 }
 
 .stats-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 25px
+    gap: 25px;
+    font-family: "JetBrains Mono", monospace;
+
 }
 
 .stat-item {
@@ -426,6 +438,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: "JetBrains Mono", monospace;
 }
 
 .stat-item:hover {
@@ -445,7 +458,7 @@ body {
 }
 
 .stat-value {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 700;
     color: #000000;
     margin-bottom: 5px;
@@ -467,6 +480,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: "JetBrains Mono", monospace;
 }
 
 .video-item:hover {
@@ -492,14 +506,15 @@ body {
 }
 
 .video-title {
-    font-size: 18px;
-    font-weight: 700;
+    font-size: 16px;
+    font-weight: 600;
     color: #000000;
     margin-bottom: 5px;
+    font-family: "JetBrains Mono", monospace;
 }
 
 .video-title {
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: bold;
     margin-top: 0.5rem;
 }
