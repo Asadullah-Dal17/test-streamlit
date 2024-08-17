@@ -61,9 +61,14 @@ html_code = """
         </div>
         <div class="introduction">
             <h1>Welcome to My Portfolio</h1>
-            <p>Hi! I'm Asadullah Dal, an educator, YouTuber, and freelancer specializing in Computer Vision and
-                Robotics. Explore my projects and skills, and feel free to reach out!</p>
-            <button class="view-more">View More</button>
+             <p>I’m a <strong>Computer Vision Developer 📷 </strong> with over five years of experience. Since 2019,
+        I’ve
+        been crafting innovative AI solutions. 💻 I also run a YouTube channel, <strong>AiPhile</strong>
+        🎥,
+        where I share tutorials on computer vision. Looking for expert <strong>freelance services</strong>? Let’s bring
+        your vision to
+        life!
+        🚀</p>
         </div>
     </div>
 
