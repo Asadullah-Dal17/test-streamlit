@@ -117,19 +117,23 @@ st.html(html_code)
 def cards():
 
     html_string = """
-        <section class="warp">
+       <!-- Project Card Section -->
+    <section class="warp">
         <div class="title-container">
             <h2 class="section-title">Projects</h2>
         </div>
         <div class="cards-container">
             <div class="box">
                 <div class="imgbox">
-                    <img src="" alt="">
+                    <img src="https://github.com/user-attachments/assets/d746d160-c4e2-4f33-8fcc-d61233eadacd" alt="">
                 </div>
                 <div class="content">
                     <h2>Eyes Tracking</h2>
-                    <div class="text">Implemented a real-time eye-tracking system leveraging computer vision and Mediapipe's facial landmark detection. Developed algorithms for accurate eye region extraction and position estimation. Demonstrated proficiency in image processing, machine learning, and real-time system development</div>
-                    <a href="#">Eyes Tracking</a>
+                    <div class="text">Implemented a real-time eye-tracking system leveraging computer vision and
+                        Mediapipe's facial landmark detection. Developed algorithms for accurate eye region extraction
+                        and position estimation. Demonstrated proficiency in image processing, machine learning, and
+                        real-time system development</div>
+                    <a href="https://github.com/Asadullah-Dal17/Eyes-Position-Estimator-Mediapipe">More</a>
                 </div>
             </div>
             <div class="box">
@@ -138,32 +142,42 @@ def cards():
                 </div>
                 <div class="content">
                     <h2>Interactive 3D Image Display</h2>
-                    <div class="text">A project that merges the digital and physical realms, bringing 2D images to life in 3D space through the use of Aruco markers and OpenCV. This interactive experience allows users to witness the illusion of a floating image, creating a captivating and immersive display..</div>
+                    <div class="text">A project that merges the digital and physical realms, bringing 2D images to life
+                        in 3D space through the use of Aruco markers and OpenCV. This interactive experience allows
+                        users to witness the illusion of a floating image, creating a captivating and immersive
+                        display.</div>
                     <a href="#">More</a>
                 </div>
             </div>
             <div class="box">
                 <div class="imgbox">
-                    <img src="" alt="">
+                    <img src="https://github.com/user-attachments/assets/4ee98e11-532b-47c0-97ba-414a71ef3f2b" alt="">
                 </div>
                 <div class="content">
-                    <h2>Eyes Position Estimation</h2>
-                    <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut iste qui, quibusdam, voluptatibus quas ipsa architecto aliquid maxime itaque a impedit harum, omnis alias consequuntur. Aliquid, suscipit! Ratione, quod necessitatibus.</div>
-                    <a href="#">Eyes Tracking</a>
+                    <h2>Face-Following Robot</h2>
+                    <div class="text">Developed a face-following robotic system integrating computer vision and
+                        Arduino-based control. The project involved real-time face detection, tracking, and distance
+                        estimation to enable autonomous navigation and object following.</div>
+                    <a href="https://github.com/Asadullah-Dal17/Face-Following-Robot-using-Distance-Estimation">More</a>
                 </div>
             </div>
             <div class="box">
                 <div class="imgbox">
-                    <img src="https://images.pexels.com/photos/67857/daisy-flower-spring-marguerite-67857.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+                    <img src="https://github.com/user-attachments/assets/57182f93-7b1c-486f-bdc3-837e9072f59f" alt="">
                 </div>
                 <div class="content">
-                    <h2>Screen Time with CV</h2>
-                    <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut iste qui, quibusdam, voluptatibus quas ipsa architecto aliquid maxime itaque a impedit harum, omnis alias consequuntur. Aliquid, suscipit! Ratione, quod necessitatibus.</div>
-                    <a href="#">Eyes Tracking</a>
+                    <h2>Face to Screen Time</h2>
+                    <div class="text">This project employs computer vision techniques to accurately calculate face time
+                        and session duration. By utilizing Mediapipe's robust face detection model, the system
+                        effectively tracks facial presence within a video stream, providing quantitative metrics for
+                        screen time analysis.</div>
+                    <a
+                        href="https://github.com/Asadullah-Dal17/AiPhile-Mediapipe-Course/tree/master/FACE_DETECTION/Face-Time">More</a>
                 </div>
             </div>
         </div>
     </section>
+
     """
     st.html(html_string)
 
