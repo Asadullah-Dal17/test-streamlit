@@ -134,17 +134,17 @@ def cards():
             </div>
             <div class="box">
                 <div class="imgbox">
-                    <img src="https://images.pexels.com/photos/56866/garden-rose-red-pink-56866.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+                    <img src="https://github.com/user-attachments/assets/b7ce39c0-9e66-4ed6-b4c2-5378390fed1a" alt="">
                 </div>
                 <div class="content">
-                    <h2>Floating Image Viewer</h2>
-                    <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut iste qui, quibusdam, voluptatibus quas ipsa architecto aliquid maxime itaque a impedit harum, omnis alias consequuntur. Aliquid, suscipit! Ratione, quod necessitatibus.</div>
-                    <a href="#">Eyes Tracking</a>
+                    <h2>Interactive 3D Image Display</h2>
+                    <div class="text">A project that merges the digital and physical realms, bringing 2D images to life in 3D space through the use of Aruco markers and OpenCV. This interactive experience allows users to witness the illusion of a floating image, creating a captivating and immersive display..</div>
+                    <a href="#">More</a>
                 </div>
             </div>
             <div class="box">
                 <div class="imgbox">
-                    <img src="https://images.pexels.com/photos/67857/daisy-flower-spring-marguerite-67857.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+                    <img src="" alt="">
                 </div>
                 <div class="content">
                     <h2>Eyes Position Estimation</h2>
