@@ -124,11 +124,11 @@ def cards():
         <div class="cards-container">
             <div class="box">
                 <div class="imgbox">
-                    <img src="https://images.pexels.com/photos/56866/garden-rose-red-pink-56866.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+                    <img src="" alt="">
                 </div>
                 <div class="content">
-                    <h2>Floating Image Viewer</h2>
-                    <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut iste qui, quibusdam, voluptatibus quas ipsa architecto aliquid maxime itaque a impedit harum, omnis alias consequuntur. Aliquid, suscipit! Ratione, quod necessitatibus.</div>
+                    <h2>Eyes Tracking</h2>
+                    <div class="text">Implemented a real-time eye-tracking system leveraging computer vision and Mediapipe's facial landmark detection. Developed algorithms for accurate eye region extraction and position estimation. Demonstrated proficiency in image processing, machine learning, and real-time system development</div>
                     <a href="#">Eyes Tracking</a>
                 </div>
             </div>
