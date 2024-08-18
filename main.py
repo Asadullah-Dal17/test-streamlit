@@ -1,7 +1,7 @@
 import streamlit as st
 import youtubeAPI
 
-st.set_page_config(layout="wide")
+st.set_page_config(page_title="Portfolio", page_icon=":wave:", layout="wide")
 
 youtube_api_key = st.secrets["YOUTUBE_API_KEY"]
 yt_api = youtubeAPI.YoutubeAPI(
