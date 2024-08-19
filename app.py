@@ -1,25 +1,18 @@
 import streamlit as st
-from pages.home import home
-from pages.youtube import youtube
-from pages.memes import memes
+from pages import home, youtube, memes  # Ensure pages is the correct directory
 
-pg = st.navigation(
-    [
-        st.Page(
-            home,
-            title="Home",
-            icon=":material/home:",
-        ),
-        st.Page(
-            youtube,
-            title="Youtube Analysis",
-            icon=":material/analytics:",
-        ),
-        st.Page(
-            memes,
-            title="Random Memes",
-            icon=":material/ar_on_you:",
-        ),
-    ]
+# Sidebar for navigation
+st.sidebar.title("Navigation")
+page = st.sidebar.radio(
+    "Go to",
+    ["Home", "YouTube Analysis", "Random Memes"],
+    index=0,  # Default selected page
 )
-pg.run()
+
+# Load the selected page
+if page == "Home":
+    home.main()
+elif page == "YouTube Analysis":
+    youtube.main()
+elif page == "Random Memes":
+    memes.main()
