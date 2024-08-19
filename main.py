@@ -298,92 +298,94 @@ def most_popular_videos():
 
 def recently_uploaded_videos(recent_uploads_list):
     html_recent_upload_videos = f"""
-    <!-- Recent Videos Section -->
-    <section class="section">
-        <div class="section-title">Recent Videos</div>
-        <div class="stats-container">
-            <div class="video-item">
-                <div class="video-embed">
-                    <iframe src={recent_uploads_list[0]["url"]} allowfullscreen></iframe>
+        <!-- Recent Videos Section -->
+        <div class="whole_cover">
+            <section class="section">
+                <div class="section-title">Recent Videos</div>
+                <div class="stats-container">
+                    <div class="video-item">
+                        <div class="video-embed">
+                            <iframe src={recent_uploads_list[0]["url"]} allowfullscreen></iframe>
+                        </div>
+                        <div class="video-title">{recent_uploads_list[0]["title"]}</div>
+                        <div class="video-stats">
+                            <div class="stat">
+                                <i class="fas fa-eye stat-icon"></i>
+                                <span>{recent_uploads_list[0]["viewCount"]}</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-thumbs-up stat-icon"></i>
+                                <span>{recent_uploads_list[0]["likeCount"]}</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-comments stat-icon"></i>
+                                <span>{recent_uploads_list[0]["commentCount"]}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-item">
+                        <div class="video-embed">
+                            <iframe src={recent_uploads_list[1]['url']} allowfullscreen></iframe>
+                        </div>
+                        <div class="video-title">{recent_uploads_list[1]['title']}</div>
+                        <div class="video-stats">
+                            <div class="stat">
+                                <i class="fas fa-eye stat-icon"></i>
+                                <span>{recent_uploads_list[1]['viewCount']}</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-thumbs-up stat-icon"></i>
+                                <span>{recent_uploads_list[1]['likeCount']}</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-comments stat-icon"></i>
+                                <span>{recent_uploads_list[1]['commentCount']}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-item">
+                        <div class="video-embed">
+                            <iframe src={recent_uploads_list[2]['url']} allowfullscreen></iframe>
+                        </div>
+                        <div class="video-title">{recent_uploads_list[2]['title']}</div>
+                        <div class="video-stats">
+                            <div class="stat">
+                                <i class="fas fa-eye stat-icon"></i>
+                                <span>{recent_uploads_list[2]['viewCount']}</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-thumbs-up stat-icon"></i>
+                                <span>{recent_uploads_list[2]['likeCount']}</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-comments stat-icon"></i>
+                                <span>{recent_uploads_list[2]['commentCount']}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-item">
+                        <div class="video-embed">
+                            <iframe src={recent_uploads_list[3]['url']} allowfullscreen></iframe>
+                        </div>
+                        <div class="video-title">{recent_uploads_list[3]['title']}</div>
+                        <div class="video-stats">
+                            <div class="stat">
+                                <i class="fas fa-eye stat-icon"></i>
+                                <span>{recent_uploads_list[3]['viewCount']}</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-thumbs-up stat-icon"></i>
+                                <span>{recent_uploads_list[3]['likeCount']}</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-comments stat-icon"></i>
+                                <span>{recent_uploads_list[3]['commentCount']}</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="video-title">{recent_uploads_list[0]["title"]}</div>
-                <div class="video-stats">
-                    <div class="stat">
-                        <i class="fas fa-eye stat-icon"></i>
-                        <span>{recent_uploads_list[0]["viewCount"]}</span>
-                    </div>
-                    <div class="stat">
-                        <i class="fas fa-thumbs-up stat-icon"></i>
-                        <span>{recent_uploads_list[0]["likeCount"]}</span>
-                    </div>
-                    <div class="stat">
-                        <i class="fas fa-comments stat-icon"></i>
-                        <span>{recent_uploads_list[0]["commentCount"]}</span>
-                    </div>
-                </div>
-            </div>
-            <div class="video-item">
-                <div class="video-embed">
-                    <iframe src={recent_uploads_list[1]['url']} allowfullscreen></iframe>
-                </div>
-                <div class="video-title">{recent_uploads_list[1]['title']}</div>
-                <div class="video-stats">
-                    <div class="stat">
-                        <i class="fas fa-eye stat-icon"></i>
-                        <span>{recent_uploads_list[1]['viewCount']}</span>
-                    </div>
-                    <div class="stat">
-                        <i class="fas fa-thumbs-up stat-icon"></i>
-                        <span>{recent_uploads_list[1]['likeCount']}</span>
-                    </div>
-                    <div class="stat">
-                        <i class="fas fa-comments stat-icon"></i>
-                        <span>{recent_uploads_list[1]['commentCount']}</span>
-                    </div>
-                </div>
-            </div>
-            <div class="video-item">
-                <div class="video-embed">
-                    <iframe src={recent_uploads_list[2]['url']} allowfullscreen></iframe>
-                </div>
-                <div class="video-title">{recent_uploads_list[2]['title']}</div>
-                    <div class="video-stats">
-                    <div class="stat">
-                        <i class="fas fa-eye stat-icon"></i>
-                        <span>{recent_uploads_list[2]['viewCount']}</span>
-                    </div>
-                    <div class="stat">
-                        <i class="fas fa-thumbs-up stat-icon"></i>
-                        <span>{recent_uploads_list[2]['likeCount']}</span>
-                    </div>
-                    <div class="stat">
-                        <i class="fas fa-comments stat-icon"></i>
-                        <span>{recent_uploads_list[2]['commentCount']}</span>
-                    </div>
-                </div>
-            </div>
-            <div class="video-item">
-                <div class="video-embed">
-                    <iframe src={recent_uploads_list[3]['url']} allowfullscreen></iframe>
-                </div>
-                <div class="video-title">{recent_uploads_list[3]['title']}</div>
-                    <div class="video-stats">
-                    <div class="stat">
-                        <i class="fas fa-eye stat-icon"></i>
-                        <span>{recent_uploads_list[3]['viewCount']}</span>
-                    </div>
-                    <div class="stat">
-                        <i class="fas fa-thumbs-up stat-icon"></i>
-                        <span>{recent_uploads_list[3]['likeCount']}</span>
-                    </div>
-                    <div class="stat">
-                        <i class="fas fa-comments stat-icon"></i>
-                        <span>{recent_uploads_list[3]['commentCount']}</span>
-                    </div>
-                </div>
-            </div>
+            </section>
         </div>
-    </section>
     """
 
     st.markdown(html_recent_upload_videos, unsafe_allow_html=True)
