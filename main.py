@@ -122,66 +122,76 @@ st.html(html_code)
 def cards():
 
     html_string = """
-       <!-- Project Card Section -->
-    <section class="warp">
-        <div class="title-container">
-            <h2 class="section-title">Projects</h2>
-        </div>
-        <div class="cards-container">
-            <div class="box">
-                <div class="imgbox">
-                    <img src="https://github.com/user-attachments/assets/d746d160-c4e2-4f33-8fcc-d61233eadacd" alt="">
+    <!-- Project Card Section -->
+    <div class="whole_cover">
+        <section class="warp">
+            <div class="title-container">
+                <h2 class="section-title">Projects</h2>
+            </div>
+            <div class="cards-container">
+                <div class="box">
+                    <div class="imgbox">
+                        <img src="https://github.com/user-attachments/assets/d746d160-c4e2-4f33-8fcc-d61233eadacd"
+                            alt="">
+                    </div>
+                    <div class="content">
+                        <h2>Eyes Tracking</h2>
+                        <div class="text">Implemented a real-time eye-tracking system leveraging computer vision and
+                            Mediapipe's facial landmark detection. Developed algorithms for accurate eye region
+                            extraction
+                            and position estimation. Demonstrated proficiency in image processing, machine learning, and
+                            real-time system development</div>
+                        <a href="https://github.com/Asadullah-Dal17/Eyes-Position-Estimator-Mediapipe">More</a>
+                    </div>
                 </div>
-                <div class="content">
-                    <h2>Eyes Tracking</h2>
-                    <div class="text">Implemented a real-time eye-tracking system leveraging computer vision and
-                        Mediapipe's facial landmark detection. Developed algorithms for accurate eye region extraction
-                        and position estimation. Demonstrated proficiency in image processing, machine learning, and
-                        real-time system development</div>
-                    <a href="https://github.com/Asadullah-Dal17/Eyes-Position-Estimator-Mediapipe">More</a>
+                <div class="box">
+                    <div class="imgbox">
+                        <img src="https://github.com/user-attachments/assets/b7ce39c0-9e66-4ed6-b4c2-5378390fed1a"
+                            alt="">
+                    </div>
+                    <div class="content">
+                        <h2>Interactive 3D Image Display</h2>
+                        <div class="text">A project that merges the digital and physical realms, bringing 2D images to
+                            life
+                            in 3D space through the use of Aruco markers and OpenCV. This interactive experience allows
+                            users to witness the illusion of a floating image, creating a captivating and immersive
+                            display.</div>
+                        <a href="#">More</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="imgbox">
+                        <img src="https://github.com/user-attachments/assets/4ee98e11-532b-47c0-97ba-414a71ef3f2b"
+                            alt="">
+                    </div>
+                    <div class="content">
+                        <h2>Face-Following Robot</h2>
+                        <div class="text">Developed a face-following robotic system integrating computer vision and
+                            Arduino-based control. The project involved real-time face detection, tracking, and distance
+                            estimation to enable autonomous navigation and object following.</div>
+                        <a
+                            href="https://github.com/Asadullah-Dal17/Face-Following-Robot-using-Distance-Estimation">More</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="imgbox">
+                        <img src="https://github.com/user-attachments/assets/57182f93-7b1c-486f-bdc3-837e9072f59f"
+                            alt="">
+                    </div>
+                    <div class="content">
+                        <h2>Face to Screen Time</h2>
+                        <div class="text">This project employs computer vision techniques to accurately calculate face
+                            time
+                            and session duration. By utilizing Mediapipe's robust face detection model, the system
+                            effectively tracks facial presence within a video stream, providing quantitative metrics for
+                            screen time analysis.</div>
+                        <a
+                            href="https://github.com/Asadullah-Dal17/AiPhile-Mediapipe-Course/tree/master/FACE_DETECTION/Face-Time">More</a>
+                    </div>
                 </div>
             </div>
-            <div class="box">
-                <div class="imgbox">
-                    <img src="https://github.com/user-attachments/assets/b7ce39c0-9e66-4ed6-b4c2-5378390fed1a" alt="">
-                </div>
-                <div class="content">
-                    <h2>Interactive 3D Image Display</h2>
-                    <div class="text">A project that merges the digital and physical realms, bringing 2D images to life
-                        in 3D space through the use of Aruco markers and OpenCV. This interactive experience allows
-                        users to witness the illusion of a floating image, creating a captivating and immersive
-                        display.</div>
-                    <a href="#">More</a>
-                </div>
-            </div>
-            <div class="box">
-                <div class="imgbox">
-                    <img src="https://github.com/user-attachments/assets/4ee98e11-532b-47c0-97ba-414a71ef3f2b" alt="">
-                </div>
-                <div class="content">
-                    <h2>Face-Following Robot</h2>
-                    <div class="text">Developed a face-following robotic system integrating computer vision and
-                        Arduino-based control. The project involved real-time face detection, tracking, and distance
-                        estimation to enable autonomous navigation and object following.</div>
-                    <a href="https://github.com/Asadullah-Dal17/Face-Following-Robot-using-Distance-Estimation">More</a>
-                </div>
-            </div>
-            <div class="box">
-                <div class="imgbox">
-                    <img src="https://github.com/user-attachments/assets/57182f93-7b1c-486f-bdc3-837e9072f59f" alt="">
-                </div>
-                <div class="content">
-                    <h2>Face to Screen Time</h2>
-                    <div class="text">This project employs computer vision techniques to accurately calculate face time
-                        and session duration. By utilizing Mediapipe's robust face detection model, the system
-                        effectively tracks facial presence within a video stream, providing quantitative metrics for
-                        screen time analysis.</div>
-                    <a
-                        href="https://github.com/Asadullah-Dal17/AiPhile-Mediapipe-Course/tree/master/FACE_DETECTION/Face-Time">More</a>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
     """
     st.html(html_string)
