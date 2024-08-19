@@ -414,6 +414,8 @@ def display_youtube_channel_stats(
     content_gap = yt_api.calculate_content_gap()
 
     html_channel_stats = f"""
+
+    <div class="whole_cover">
         <!-- Youtube Stats Section -->
         <section class="section">
             <div class="section-title">YouTube Stats</div>
@@ -464,7 +466,11 @@ def display_youtube_channel_stats(
                     <div class="stat-label">Average Comments</div>
                 </div>
             </div>
-        </section> """
+        </section>
+    </div>
+ 
+ 
+"""
 
     st.markdown(html_channel_stats, unsafe_allow_html=True)
 
