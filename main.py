@@ -205,92 +205,94 @@ def most_popular_videos():
     most_popular_videos_list = yt_api.get_most_popular_videos()
 
     html_most_popular = f"""
-    <!--  ++ Most Popular Videos Section +++ -->
-    <section class="section">
-        <div class="section-title">Most Popular Videos</div>
-        <div class="stats-container">
-            <div class="video-item">
-                <div class="video-embed">
-                    <iframe src={most_popular_videos_list[0]['url']} allowfullscreen></iframe>
-                </div>
-                <div class="video-title">{most_popular_videos_list[0]['title']}</div>
-                <div class="video-stats">
-                    <div class="stat">
-                        <i class="fas fa-eye stat-icon"></i>
-                        <span>{most_popular_videos_list[0]['viewCount']}</span>
+    <div class="whole_cover">
+        <section class="section">
+            <div class="section-title">Most Popular Videos</div>
+            <div class="stats-container">
+                <div class="video-item">
+                    <div class="video-embed">
+                        <iframe src={most_popular_videos_list[0]['url']} allowfullscreen></iframe>
                     </div>
-                    <div class="stat">
-                        <i class="fas fa-thumbs-up stat-icon"></i>
-                        <span>{most_popular_videos_list[0]['likeCount']}</span>
-                    </div>
-                    <div class="stat">
-                        <i class="fas fa-comments stat-icon"></i>
-                        <span>{most_popular_videos_list[0]['commentCount']}</span>
-                    </div>
-                </div>
-            </div>
-            <div class="video-item">
-                <div class="video-embed">
-                    <iframe src={most_popular_videos_list[1]['url']} allowfullscreen></iframe>
-                </div>
-                <div class="video-title">{most_popular_videos_list[1]['title']}</div>
+                    <div class="video-title">{most_popular_videos_list[0]['title']}</div>
                     <div class="video-stats">
-                    <div class="stat">
-                        <i class="fas fa-eye stat-icon"></i>
-                        <span>{most_popular_videos_list[1]['viewCount']}</span>
-                    </div>
-                    <div class="stat">
-                        <i class="fas fa-thumbs-up stat-icon"></i>
-                        <span>{most_popular_videos_list[1]['likeCount']}</span>
-                    </div>
-                    <div class="stat">
-                        <i class="fas fa-comments stat-icon"></i>
-                        <span>{most_popular_videos_list[1]['commentCount']}</span>
+                        <div class="stat">
+                            <i class="fas fa-eye stat-icon"></i>
+                            <span>{most_popular_videos_list[0]['viewCount']}</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-thumbs-up stat-icon"></i>
+                            <span>{most_popular_videos_list[0]['likeCount']}</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-comments stat-icon"></i>
+                            <span>{most_popular_videos_list[0]['commentCount']}</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="video-item">
-                <div class="video-embed">
-                    <iframe src={most_popular_videos_list[2]['url']} allowfullscreen></iframe>
-                </div>
-                <div class="video-title">{most_popular_videos_list[2]['title']}</div>
+                <div class="video-item">
+                    <div class="video-embed">
+                        <iframe src={most_popular_videos_list[1]['url']} allowfullscreen></iframe>
+                    </div>
+                    <div class="video-title">{most_popular_videos_list[1]['title']}</div>
                     <div class="video-stats">
-                    <div class="stat">
-                        <i class="fas fa-eye stat-icon"></i>
-                        <span>{most_popular_videos_list[2]['viewCount']}</span>
+                        <div class="stat">
+                            <i class="fas fa-eye stat-icon"></i>
+                            <span>{most_popular_videos_list[1]['viewCount']}</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-thumbs-up stat-icon"></i>
+                            <span>{most_popular_videos_list[1]['likeCount']}</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-comments stat-icon"></i>
+                            <span>{most_popular_videos_list[1]['commentCount']}</span>
+                        </div>
                     </div>
-                    <div class="stat">
-                        <i class="fas fa-thumbs-up stat-icon"></i>
-                        <span>{most_popular_videos_list[2]['likeCount']}</span>
+                </div>
+                <div class="video-item">
+                    <div class="video-embed">
+                        <iframe src={most_popular_videos_list[2]['url']} allowfullscreen></iframe>
                     </div>
-                    <div class="stat">
-                        <i class="fas fa-comments stat-icon"></i>
-                        <span>{most_popular_videos_list[2]['commentCount']}</span>
+                    <div class="video-title">{most_popular_videos_list[2]['title']}</div>
+                    <div class="video-stats">
+                        <div class="stat">
+                            <i class="fas fa-eye stat-icon"></i>
+                            <span>{most_popular_videos_list[2]['viewCount']}</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-thumbs-up stat-icon"></i>
+                            <span>{most_popular_videos_list[2]['likeCount']}</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-comments stat-icon"></i>
+                            <span>{most_popular_videos_list[2]['commentCount']}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-item">
+                    <div class="video-embed">
+                        <iframe src={most_popular_videos_list[3]['url']} allowfullscreen></iframe>
+                    </div>
+                    <div class="video-title">{most_popular_videos_list[3]['title']}</div>
+                    <div class="video-stats">
+                        <div class="stat">
+                            <i class="fas fa-eye stat-icon"></i>
+                            <span>{most_popular_videos_list[3]['viewCount']}</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-thumbs-up stat-icon"></i>
+                            <span>{most_popular_videos_list[3]['likeCount']}</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-comments stat-icon"></i>
+                            <span>{most_popular_videos_list[3]['commentCount']}</span>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="video-item">
-                <div class="video-embed">
-                    <iframe src={most_popular_videos_list[3]['url']} allowfullscreen></iframe>
-                </div>
-                <div class="video-title">{most_popular_videos_list[3]['title']}</div>
-                        <div class="video-stats">
-                    <div class="stat">
-                        <i class="fas fa-eye stat-icon"></i>
-                        <span>{most_popular_videos_list[3]['viewCount']}</span>
-                    </div>
-                    <div class="stat">
-                        <i class="fas fa-thumbs-up stat-icon"></i>
-                        <span>{most_popular_videos_list[3]['likeCount']}</span>
-                    </div>
-                    <div class="stat">
-                        <i class="fas fa-comments stat-icon"></i>
-                        <span>{most_popular_videos_list[3]['commentCount']}</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>"""
+        </section>
+    </div> 
+    """
     st.markdown(html_most_popular, unsafe_allow_html=True)
 
 
