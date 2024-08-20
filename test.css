@@ -569,14 +569,11 @@ h1, h2, h3, h4, h5, h6 {
     object-fit: cover;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    /* animation: fadeIn 1s ease-in-out; */
-    transition: transform 0.3s ease;
+    animation: fadeIn 1s ease-in-out;
     filter: grayscale(100%);
 }
 
 .git_stats_image:hover {
-    filter: grayscale(0);
-    transform: scale(1.05);
   animation: hueRotate 5s infinite linear;
 }
 

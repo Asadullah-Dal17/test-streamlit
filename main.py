@@ -1,7 +1,7 @@
 import streamlit as st
 import youtubeAPI
 
-st.set_page_config(page_title="Portfolio", page_icon=":wave:", layout="wide")
+st.set_page_config(page_title="Portfolio", page_icon=":home:", layout="wide")
 
 youtube_api_key = st.secrets["YOUTUBE_API_KEY"]
 yt_api = youtubeAPI.YoutubeAPI(
@@ -292,6 +292,17 @@ def most_popular_videos():
             </div>
         </section>
     </div> 
+    <div class="whole_cover">
+        <div class="section">
+            <h1 class="section-title">Github Stats</h1>
+            <div class="git_stats">
+                <img src="https://streak-stats.demolab.com?user=Asadullah-Dal17&theme=transparent&border_radius=6"
+                    alt="" class="git_stats_image">
+                <img src="https://github-readme-stats.vercel.app/api?username=Asadullah-Dal17&show_icons=true&theme=transparent&border_radius=6"
+                    alt="" class="git_stats_image">
+            </div>
+        </div>
+    </div>
     """
     st.markdown(html_most_popular, unsafe_allow_html=True)
 
