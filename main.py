@@ -519,11 +519,26 @@ def youtube_data_display():
     most_popular_videos()
 
 
+def contact():
+    contact_html = """
+    <div class="whole_cover">
+        <div class="section">
+             <div class="section-title">Contact</div>
+            <div class="contact">
+                <h3 class="email">asadullah92c@gmail.com</h3>
+            </div>
+        </div>
+    </div>
+    """
+    st.markdown(contact_html, unsafe_allow_html=True)
+
+
 def main():
 
     load_css("style_st.css")
     cards()
     youtube_data_display()
+    contact()
 
 
 if __name__ == "__main__":
